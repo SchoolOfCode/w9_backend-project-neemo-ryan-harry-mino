@@ -11,11 +11,11 @@ use our query function to communicate with the database (hand in the SQL string)
 
 import { query } from "../index.js";
 
-const sqlString = `CREATE TABLE IF NOT EXISTS books (book_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, author TEXT, country TEXT, imagelink VARCHAR, language TEXT, link VARCHAR, pages INT, title TEXT, year INT);`;
+const sqlString = `CREATE TABLE IF NOT EXISTS quotes (quote_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, text TEXT, author TEXT);`;
 
-async function createBooksTable() {
+async function createQuotesTable() {
   const res = await query(sqlString);
-  console.log("Created books table - success");
+  console.log("Created quotes table - success");
 }
 
-createBooksTable();
+createQuotesTable();
