@@ -12,9 +12,7 @@ import { query } from "../index.js";
 export async function getQuotes() {
   let sqlString = `SELECT * FROM quotes;`;
   const res = await query(sqlString);
-  // console.log(res);
-  return res;
-  //.rows
+  return res.rows;
 }
 
 export function searchQuoteByText(searchTerm) {
@@ -25,7 +23,7 @@ export function searchQuoteByText(searchTerm) {
 
 export function searchQuoteByAuthor(searchTerm) {
   const authorNamesMatchingSearchTerm = authors.filter(function (author) {
-    const authorName = `${author.first_name} ${author.last_name}`;
+    const authorName = `${author}`;
     return authorName.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
