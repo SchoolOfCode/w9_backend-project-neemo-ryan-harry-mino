@@ -12,8 +12,9 @@ import { query } from "../index.js";
 export async function getQuotes() {
   let sqlString = `SELECT * FROM quotes;`;
   const res = await query(sqlString);
-  console.log(res);
-  return res.rows;
+  // console.log(res);
+  return res;
+  //.rows
 }
 
 export function searchQuoteByText(searchTerm) {

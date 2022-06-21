@@ -5,8 +5,9 @@ import express from "express";
 // import logger from "morgan";
 
 import indexRouter from "./db/routes/index.js";
-import quotesRouter from "./db/routes/booksrouter.js";
+import quotesRouter from "./db/routes/quotesRouter.js";
 import { quotes } from "./db/libs/quotes.js";
+// import { getQuotes } from "./db/models/datamodels.js";
 
 const app = express();
 const PORT = process.env.PGPORT || 3000;
@@ -17,7 +18,7 @@ const PORT = process.env.PGPORT || 3000;
 app.get("/", function (req, res) {
   res.json({
     success: true,
-    message: "sucess",
+    message: "success",
   });
 });
 
