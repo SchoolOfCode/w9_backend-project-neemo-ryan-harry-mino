@@ -1,13 +1,10 @@
-//link = fetch request
-// DO NOT WRITE
-
 //  import {quotes} from "../libs/quotes.js";
 import { query } from "../index.js";
 
 //models below
 //need to make async to work with database
 //need to speak to database in SQL
-//only change models
+//only change models instead of in routes
 
 export async function getQuotes() {
   let sqlString = `SELECT * FROM quotes;`;
@@ -15,54 +12,54 @@ export async function getQuotes() {
   return res.rows;
 }
 
-export function searchQuoteByText(searchTerm) {
-  return quotes.filter(function (quotes) {
-    return quotes.text.toLowerCase().includes(searchTerm.toLowerCase());
-  });
-}
+// export function searchQuoteByText(searchTerm) {
+//   return quotes.filter(function (quotes) {
+//     return quotes.text.toLowerCase().includes(searchTerm.toLowerCase());
+//   });
+// }
 
-export function searchQuoteByAuthor(searchTerm) {
-  const authorNamesMatchingSearchTerm = authors.filter(function (author) {
-    const authorName = `${author}`;
-    return authorName.toLowerCase().includes(searchTerm.toLowerCase());
-  });
+// export function searchQuoteByAuthor(searchTerm) {
+//   const authorNamesMatchingSearchTerm = authors.filter(function (author) {
+//     const authorName = `${author}`;
+//     return authorName.toLowerCase().includes(searchTerm.toLowerCase());
+//   });
 
-  const authorIdsMatchingSearchTerm = authorNamesMatchingSearchTerm.map(
-    function (author) {
-      return author.id;
-    }
-  );
+//   const authorIdsMatchingSearchTerm = authorNamesMatchingSearchTerm.map(
+//     function (author) {
+//       return author.id;
+//     }
+//   );
 
-  return quotes.filter(function (quotes) {
-    return authorIdsMatchingSearchTerm.includes(quotes.author_id);
-  });
-}
+//   return quotes.filter(function (quotes) {
+//     return authorIdsMatchingSearchTerm.includes(quotes.author_id);
+//   });
+// }
 
-export function getQuoteById(id) {
-  const found = quotes.find(function (quotes) {
-    return quotes.id === id;
-  });
-  return found;
-}
+// export function getQuoteById(id) {
+//   const found = quotes.find(function (quotes) {
+//     return quotes.id === id;
+//   });
+//   return found;
+// }
 
-export function createQuote(quotes) {
-  quotes.push(quotes);
-  return quotes[quotes.length - 1];
-}
+// export function createQuote(quotes) {
+//   quotes.push(quotes);
+//   return quotes[quotes.length - 1];
+// }
 
-export function updateQuoteById(id, updates) {
-  const foundIndex = quotes.findIndex(function (quotes) {
-    return quotes.id === id;
-  });
-  quotes[foundIndex] = updates;
-  return quotes[foundIndex];
-}
+// export function updateQuoteById(id, updates) {
+//   const foundIndex = quotes.findIndex(function (quotes) {
+//     return quotes.id === id;
+//   });
+//   quotes[foundIndex] = updates;
+//   return quotes[foundIndex];
+// }
 
-export function deleteQuoteById(id) {
-  const foundIndex = quotes.findIndex(function (quotes) {
-    return quotes.id === id;
-  });
-  const item = quotes[foundIndex];
-  quotes.splice(foundIndex, 1);
-  return item;
-}
+// export function deleteQuoteById(id) {
+//   const foundIndex = quotes.findIndex(function (quotes) {
+//     return quotes.id === id;
+//   });
+//   const item = quotes[foundIndex];
+//   quotes.splice(foundIndex, 1);
+//   return item;
+// }

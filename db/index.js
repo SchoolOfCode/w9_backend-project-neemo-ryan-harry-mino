@@ -1,4 +1,4 @@
-// DO NOT TOUCH
+// DO NOT TOUCH unless Heroku CREDS change
 //importing postgress Making query function and exporting it
 import pg from "pg";
 export const pool = new pg.Pool({

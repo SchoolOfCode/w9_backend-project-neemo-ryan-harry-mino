@@ -1,18 +1,13 @@
+// imports
 import express from "express";
-// import { fileURLToPath } from "url";
-// import path, { dirname } from "path";
-// import cookieParser from "cookie-parser";
-// import logger from "morgan";
-
 import quotesRouter from "./db/routes/quotesRouter.js";
-import { quotes } from "./db/libs/quotes.js";
 
+// creating App using express
 const app = express();
+// declaring PORT variable
 const PORT = process.env.PGPORT || 3000;
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
 
-// test route or app.get?
+// root route for our API
 app.get("/", function (req, res) {
   res.json({
     success: true,
@@ -20,20 +15,12 @@ app.get("/", function (req, res) {
   });
 });
 
+// App is listening on port
 app.listen(PORT, function () {
   console.log(`Server is running on port ${PORT}`);
 });
 
 app.use(express.json());
-// app.use(logger("dev"));
-// app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, "public")));
-
-/* DO NOT CHANGE THIS ROUTE - it serves our front-end */
-// app.get("/", function (req, res) {
-//   res.sendFile(html);
-// });
 
 // Routes
 app.use("/quotes", quotesRouter);
