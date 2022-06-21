@@ -29,7 +29,6 @@ quotesRouter.get("/", async function (req, res) {
   // return res.json({ success: true, payload: result });
   // }
   const result = await getQuotes();
-  // console.log(result)
   res.json({ success: true, payload: result });
 });
 
