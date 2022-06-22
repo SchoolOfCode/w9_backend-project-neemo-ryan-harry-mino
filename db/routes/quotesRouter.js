@@ -7,9 +7,9 @@ const quotesRouter = express.Router();
 
 import {
   getQuotes,
+  getQuoteById,
   // searchQuoteByText,
   // searchQuoteByAuthor,
-  // getQuoteById,
   // createQuote,
   // updateQuoteById,
   // deleteQuoteById,
@@ -32,18 +32,12 @@ quotesRouter.get("/", async function (req, res) {
   res.json({ success: true, payload: result });
 });
 
-// quotesRouter.get("/:id", function (req, res) {
-// const id = Number(req.params.id);
-// const Quote = getQuoteById(id);
-// res.json({ success: true, payload: Quote });
-// });
-//
-// quotesRouter.post("/", function (req, res) {
-// const newQuote = req.body;
-// const result = createQuote(newQuote);
-// res.json({ success: true, payload: result });
-// });
-//
+quotesRouter.get("/:id", async function (req, res) {
+  const id = Number(req.params.id);
+  const result = await getQuoteById(id);
+  res.json({ success: true, payload: result });
+});
+
 // quotesRouter.put("/:id", function (req, res) {
 // const id = Number(req.params.id);
 // const data = req.body;

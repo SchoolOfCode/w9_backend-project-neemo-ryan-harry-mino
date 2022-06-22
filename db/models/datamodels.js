@@ -12,6 +12,12 @@ export async function getQuotes() {
   return res.rows;
 }
 
+export async function getQuoteById(id) {
+  let sqlString = `SELECT * FROM quotes WHERE quote_id = ${id} ;`;
+  const res = await query(sqlString);
+  return res.rows;
+}
+
 // export function searchQuoteByText(searchTerm) {
 //   return quotes.filter(function (quotes) {
 //     return quotes.text.toLowerCase().includes(searchTerm.toLowerCase());
@@ -33,13 +39,6 @@ export async function getQuotes() {
 //   return quotes.filter(function (quotes) {
 //     return authorIdsMatchingSearchTerm.includes(quotes.author_id);
 //   });
-// }
-
-// export function getQuoteById(id) {
-//   const found = quotes.find(function (quotes) {
-//     return quotes.id === id;
-//   });
-//   return found;
 // }
 
 // export function createQuote(quotes) {
