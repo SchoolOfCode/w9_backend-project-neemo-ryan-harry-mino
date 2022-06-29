@@ -11,7 +11,6 @@ confirm data has gone into the table successfully
 import { query } from "../index.js";
 import { quotes as quotes } from "../libs/quotes.js";
 
-//`INSERT INTO quotes (text, author) VALUES ($1, $2);`, [quotes[i].author_id, quotes[i].title]
 
 async function populateQuotesTable() {
   const sqlStringPopulate = `INSERT INTO quotes (text, author) VALUES ($1, $2);`;
