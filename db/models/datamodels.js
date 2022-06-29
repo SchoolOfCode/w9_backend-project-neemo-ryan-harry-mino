@@ -1,4 +1,4 @@
-//  import {quotes} from "../libs/quotes.js";
+
 import { query } from "../index.js";
 
 export async function getQuotes() {

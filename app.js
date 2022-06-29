@@ -15,14 +15,10 @@ app.get("/", function (req, res) {
     message: "success",
   });
 });
-// 
-// app.get('/products/:id', function (req, res, next) {
-  // res.json({msg: 'This is CORS-enabled for all origins!'})
-// })
-// 
+ 
 // App is listening on port
 app.listen(PORT, function () {
-  console.log(`Server is running on port ${PORT}`);
+  // console.log(`Server is running on port ${PORT}`);
 });
 
 app.use(express.json());

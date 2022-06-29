@@ -1,8 +1,7 @@
-//DONE FOR NOW MAY NEED TO COME BACK
+
 import express from "express";
 const quotesRouter = express.Router();
 
-// GET REQUESTS AND HTTP requests
 import {
   getQuotes,
   getQuoteById,
